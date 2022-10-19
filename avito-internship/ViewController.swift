@@ -2,20 +2,20 @@ import UIKit
 
 class ViewController: UIViewController {
     private var employeesLoader = EmployeesLoader()
-    private var cashService: CashService?
     private var companies: [Сompany] = []
     var employees: [Employee] = []
+    var triggerCash = false
     private enum EmployeesNotFound: Error {
         case codeError
     }
     
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var labelButton: UIBarButtonItem!
     @IBOutlet weak var labelCompany: UILabel!
     
     @IBAction func loadNewData(_ sender: Any) {
-        if (cashService?.isCash() == true) {
-            employees = cashService!.cash
+        if (triggerCash == true) {
             print("старые данные")
         } else {
             loadData()
@@ -24,14 +24,14 @@ class ViewController: UIViewController {
         sortingEmployees()
         labelCompany.text = companies[0].name
         tableView.reloadData()
-        
+        labelButton.title = "Обновить данные"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
     }
-    
+
     func sortingEmployees() {
         employees = companies[0].employees
         employees = employees.sorted(by: { $0.name < $1.name })
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
                         self.didFailToLoadData(with: EmployeesNotFound.codeError)
                     } else {
                         self.companies = [companies.company]
-                        self.cashService?.saveData(employees: self.employees)
+                        self.saveData(companies: self.companies)
                     }
                 case .failure(let error):
                     self.didFailToLoadData(with: error)
@@ -80,7 +80,25 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func saveData(companies: [Сompany]) {
+        print("saveData")
+        self.companies = companies
+        triggerCash = true
+        savindData()
+    }
+    
+    func savindData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (60 * 60.0)) { [self] in
+            print("cash.removeAll")
+            triggerCash = false
+//            companies.removeAll()
+            labelButton.title = "Загрузить данные"
+        }
+    }
+
 }
+
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,7 +142,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        print("Определяем доступные действия для строки с индексом \(indexPath.row)")
+        print("Определение доступных действий для \(employees[indexPath.row].name)")
         let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_ in
             self.employees.remove(at: indexPath.row)
             tableView.reloadData()

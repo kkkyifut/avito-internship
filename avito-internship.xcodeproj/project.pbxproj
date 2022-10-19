@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC6D72BE2900523000F00D36 /* CashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D72BD2900523000F00D36 /* CashService.swift */; };
 		CCAF40FF28FF19B500899CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */; };
 		CCAF410128FF19B500899CA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF410028FF19B500899CA5 /* SceneDelegate.swift */; };
 		CCAF410328FF19B500899CA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF410228FF19B500899CA5 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC6D72BD2900523000F00D36 /* CashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashService.swift; sourceTree = "<group>"; };
 		CCAF40FB28FF19B500899CA5 /* avito-internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avito-internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAF410028FF19B500899CA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 			children = (
 				CCAF411328FF1B8D00899CA5 /* NetworkClient.swift */,
 				CCAF411528FF1BE600899CA5 /* EmployeesLoader.swift */,
-				CC6D72BD2900523000F00D36 /* CashService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAF410328FF19B500899CA5 /* ViewController.swift in Sources */,
-				CC6D72BE2900523000F00D36 /* CashService.swift in Sources */,
 				CCAF411928FF1E4E00899CA5 /* Employees.swift in Sources */,
 				CCAF40FF28FF19B500899CA5 /* AppDelegate.swift in Sources */,
 				CCAF410128FF19B500899CA5 /* SceneDelegate.swift in Sources */,

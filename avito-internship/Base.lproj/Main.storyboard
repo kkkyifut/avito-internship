@@ -80,6 +80,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="A3g-CQ-2en" id="i6v-Hm-XDG"/>
+                        <outlet property="labelButton" destination="6Du-Rw-Alu" id="P6Q-kc-eeQ"/>
                         <outlet property="labelCompany" destination="UJb-Al-NYK" id="APJ-eW-mJc"/>
                         <outlet property="tableView" destination="qpC-e6-d3y" id="jvl-9l-l52"/>
                     </connections>

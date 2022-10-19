@@ -6,13 +6,14 @@ protocol EmployeesLoading {
 
 struct EmployeesLoader: EmployeesLoading {
     private let networkClient = NetworkClient()
-    
+    private let stringURL = "https://run.mocky.io/v3/1d1cb4ec-73db-4762-8c4b-0b8aa3cecd4c"
+
     private enum DecodeError: Error {
         case codeError
     }
     
     private var employeesUrl: URL {
-        guard let url = URL(string: "https://run.mocky.io/v3/1d1cb4ec-73db-4762-8c4b-0b8aa3cecd4c") else {
+        guard let url = URL(string: stringURL) else {
             preconditionFailure("Unable to construct employeesUrl")
         }
         return url
@@ -28,6 +29,7 @@ struct EmployeesLoader: EmployeesLoading {
     
                 if let companies = companies {
                     handler(.success(companies))
+//                    cashService.saveData(companies: [companies.company])
                     print("Successed to parse")
                 } else {
                     handler(.failure(DecodeError.codeError))
