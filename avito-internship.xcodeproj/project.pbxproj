@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC6D72BE2900523000F00D36 /* CashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D72BD2900523000F00D36 /* CashService.swift */; };
 		CCAF40FF28FF19B500899CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */; };
 		CCAF410128FF19B500899CA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF410028FF19B500899CA5 /* SceneDelegate.swift */; };
 		CCAF410328FF19B500899CA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF410228FF19B500899CA5 /* ViewController.swift */; };
 		CCAF410628FF19B500899CA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAF410428FF19B500899CA5 /* Main.storyboard */; };
 		CCAF410828FF19B600899CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAF410728FF19B600899CA5 /* Assets.xcassets */; };
 		CCAF410B28FF19B600899CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAF410928FF19B600899CA5 /* LaunchScreen.storyboard */; };
+		CCAF411428FF1B8D00899CA5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF411328FF1B8D00899CA5 /* NetworkClient.swift */; };
+		CCAF411628FF1BE600899CA5 /* EmployeesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF411528FF1BE600899CA5 /* EmployeesLoader.swift */; };
+		CCAF411928FF1E4E00899CA5 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF411828FF1E4E00899CA5 /* Employees.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC6D72BD2900523000F00D36 /* CashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashService.swift; sourceTree = "<group>"; };
 		CCAF40FB28FF19B500899CA5 /* avito-internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avito-internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAF410028FF19B500899CA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		CCAF410728FF19B600899CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCAF410A28FF19B600899CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCAF410C28FF19B600899CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCAF411328FF1B8D00899CA5 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CCAF411528FF1BE600899CA5 /* EmployeesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesLoader.swift; sourceTree = "<group>"; };
+		CCAF411828FF1E4E00899CA5 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,9 @@
 			isa = PBXGroup;
 			children = (
 				CCAF40FD28FF19B500899CA5 /* avito-internship */,
+				CCAF411728FF1E2200899CA5 /* Models */,
+				CCAF411228FF1B7800899CA5 /* Services */,
+				CCAF411C28FF2A0B00899CA5 /* Resources */,
 				CCAF40FC28FF19B500899CA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +67,40 @@
 		CCAF40FD28FF19B500899CA5 /* avito-internship */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */,
+				CCAF410728FF19B600899CA5 /* Assets.xcassets */,
+				CCAF410C28FF19B600899CA5 /* Info.plist */,
 				CCAF410028FF19B500899CA5 /* SceneDelegate.swift */,
+				CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */,
+				CCAF410928FF19B600899CA5 /* LaunchScreen.storyboard */,
 				CCAF410228FF19B500899CA5 /* ViewController.swift */,
 				CCAF410428FF19B500899CA5 /* Main.storyboard */,
-				CCAF410728FF19B600899CA5 /* Assets.xcassets */,
-				CCAF410928FF19B600899CA5 /* LaunchScreen.storyboard */,
-				CCAF410C28FF19B600899CA5 /* Info.plist */,
 			);
 			path = "avito-internship";
+			sourceTree = "<group>";
+		};
+		CCAF411228FF1B7800899CA5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF411328FF1B8D00899CA5 /* NetworkClient.swift */,
+				CCAF411528FF1BE600899CA5 /* EmployeesLoader.swift */,
+				CC6D72BD2900523000F00D36 /* CashService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CCAF411728FF1E2200899CA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF411828FF1E4E00899CA5 /* Employees.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCAF411C28FF2A0B00899CA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAF410328FF19B500899CA5 /* ViewController.swift in Sources */,
+				CC6D72BE2900523000F00D36 /* CashService.swift in Sources */,
+				CCAF411928FF1E4E00899CA5 /* Employees.swift in Sources */,
 				CCAF40FF28FF19B500899CA5 /* AppDelegate.swift in Sources */,
 				CCAF410128FF19B500899CA5 /* SceneDelegate.swift in Sources */,
+				CCAF411428FF1B8D00899CA5 /* NetworkClient.swift in Sources */,
+				CCAF411628FF1BE600899CA5 /* EmployeesLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -295,6 +335,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +364,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
