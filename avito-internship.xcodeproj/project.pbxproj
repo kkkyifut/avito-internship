@@ -65,11 +65,6 @@
 		CCAF40FD28FF19B500899CA5 /* avito-internship */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF410728FF19B600899CA5 /* Assets.xcassets */,
-				CCAF410C28FF19B600899CA5 /* Info.plist */,
-				CCAF410028FF19B500899CA5 /* SceneDelegate.swift */,
-				CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */,
-				CCAF410928FF19B600899CA5 /* LaunchScreen.storyboard */,
 				CCAF410228FF19B500899CA5 /* ViewController.swift */,
 				CCAF410428FF19B500899CA5 /* Main.storyboard */,
 			);
@@ -96,6 +91,11 @@
 		CCAF411C28FF2A0B00899CA5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CCAF410028FF19B500899CA5 /* SceneDelegate.swift */,
+				CCAF40FE28FF19B500899CA5 /* AppDelegate.swift */,
+				CCAF410728FF19B600899CA5 /* Assets.xcassets */,
+				CCAF410928FF19B600899CA5 /* LaunchScreen.storyboard */,
+				CCAF410C28FF19B600899CA5 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -325,9 +325,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KPR58387Y9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "avito-internship/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -354,9 +354,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KPR58387Y9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "avito-internship/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -8,12 +8,12 @@ class ViewController: UIViewController {
     private enum EmployeesNotFound: Error {
         case codeError
     }
-    
+
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var labelButton: UIBarButtonItem!
     @IBOutlet weak var labelCompany: UILabel!
-    
+
     @IBAction func loadNewData(_ sender: Any) {
         if (triggerCash == true) {
             print("старые данные")
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         tableView.reloadData()
         labelButton.title = "Обновить данные"
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -37,16 +37,16 @@ class ViewController: UIViewController {
         employees = employees.sorted(by: { $0.name < $1.name })
         print(employees.map {$0.name})
     }
-    
+
     func didFailToLoadData(with error: Error) {
         showNetworkError(message: error.localizedDescription)
     }
-    
+
     private func showLoadingIndicator(_ available: Bool) {
         activityIndicator.isHidden = !available
         available ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
-    
+
     private func showNetworkError(message: String) {
         let alertController = UIAlertController(
             title: "Ошибка",
@@ -59,7 +59,9 @@ class ViewController: UIViewController {
         alertController.addAction(confirmAction)
         present(alertController, animated: true, completion: nil)
     }
-    
+
+    // MARK: - LoadAndSaving functions
+
     func loadData() {
         showLoadingIndicator(true)
         employeesLoader.loadEmployees { result in
@@ -80,25 +82,27 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     func saveData(companies: [Сompany]) {
         print("saveData")
         self.companies = companies
-        triggerCash = true
         savindData()
+        triggerCash = true
     }
-    
+
     func savindData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + (60 * 60.0)) { [self] in
-            print("cash.removeAll")
-            triggerCash = false
-//            companies.removeAll()
-            labelButton.title = "Загрузить данные"
+        if !triggerCash {
+            DispatchQueue.main.asyncAfter(deadline: .now() + (60 * 60.0)) { [self] in
+                print("cash.removeAll")
+                triggerCash = false
+                labelButton.title = "Загрузить данные"
+            }
         }
     }
 
 }
 
+// MARK: - TableView
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,7 +121,6 @@ extension ViewController: UITableViewDataSource {
     }
 
     private func configure(cell: inout UITableViewCell, for indexPath: IndexPath) {
-
         if #available(iOS 14.0, *) {
             var configuration = cell.defaultContentConfiguration()
             configuration.text = "\(employees[indexPath.row].name)"

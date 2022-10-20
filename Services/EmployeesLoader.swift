@@ -11,14 +11,14 @@ struct EmployeesLoader: EmployeesLoading {
     private enum DecodeError: Error {
         case codeError
     }
-    
+
     private var employeesUrl: URL {
         guard let url = URL(string: stringURL) else {
             preconditionFailure("Unable to construct employeesUrl")
         }
         return url
     }
-    
+
     func loadEmployees(handler: @escaping (Result<Companies, Error>) -> Void) {
         networkClient.fetch(url: employeesUrl) { result in
             switch result {
@@ -26,10 +26,9 @@ struct EmployeesLoader: EmployeesLoading {
                 handler(.failure(error))
             case .success(let data):
                 let companies = try? JSONDecoder().decode(Companies.self, from: data)
-    
+
                 if let companies = companies {
                     handler(.success(companies))
-//                    cashService.saveData(companies: [companies.company])
                     print("Successed to parse")
                 } else {
                     handler(.failure(DecodeError.codeError))
